@@ -2,11 +2,9 @@ const express = require('express');
 
 const app = express();
 
-app.get('/api/signup', (req, res) => {
-    res.json({
-        data: 'you hit signup endpoint'
-    })
-});
+const authRoutes = require('./routes/auth.ts')
+
+app.use('/auth', authRoutes);
 
 const port = 8000;
 
